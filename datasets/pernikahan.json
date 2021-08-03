@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nama" :"Pernikahan Kecil",
+        "harga" : "50.000.000",
+        "detail" : "Lorem Ipsum dolor sit amet",
+        "gambar" : "/images/dekor1.jpg"
+    },
+    {
+        "id": 2,
+        "nama" :"Pernikahan Menengah",
+        "harga" : "70.000.000",
+        "detail" : "Lorem Ipsum dolor sit amet",
+        "gambar" : "/images/dekor2.jpg"
+    },
+    {
+        "id": 3,
+        "nama" :"Pernikahan Besar",
+        "harga" : "90.000.000",
+        "detail" : "Lorem Ipsum dolor sit amet",
+        "gambar" : "/images/dekor3.jpg"
+    }
+]

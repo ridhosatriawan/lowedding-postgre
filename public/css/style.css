@@ -1,0 +1,638 @@
+/*------------------------------------------------------------------
+    IMPORT FONTS
+-------------------------------------------------------------------*/
+
+@import url("https://fonts.googleapis.com/css?family=Barlow:100,200,300,400,500,600,700");
+@import url("https://fonts.googleapis.com/css?family=Marck+Script");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap");
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+/*------------------------------------------------------------------
+    IMPORT FILES
+-------------------------------------------------------------------*/
+
+@import url(animate.css);
+@import url(font-awesome.min.css);
+@import url(magnific-popup.css);
+
+/*------------------------------------------------------------------
+    SKELETON
+-------------------------------------------------------------------*/
+body {
+  color: #666666;
+  font-family: "Barlow", sans-serif;
+  line-height: 1.80857;
+}
+
+a {
+  color: #1f1f1f;
+  text-decoration: none !important;
+  outline: none !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  letter-spacing: 0;
+  font-weight: normal;
+  position: relative;
+  padding: 0 0 10px 0;
+  font-weight: normal;
+  line-height: 120% !important;
+  color: #1f1f1f;
+  margin: 0;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 13px;
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  color: #212121;
+  text-decoration: none !important;
+  opacity: 1;
+}
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  opacity: 0.8;
+}
+
+a {
+  color: #1f1f1f;
+  text-decoration: none;
+  outline: none;
+}
+
+a,
+.btn {
+  text-decoration: none !important;
+  outline: none !important;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-custom {
+  margin-top: 20px;
+  background-color: transparent !important;
+  border: 2px solid #ddd;
+  padding: 12px 40px;
+  font-size: 16px;
+}
+
+.lead {
+  font-size: 18px;
+  line-height: 30px;
+  color: #767676;
+  margin: 0;
+  padding: 0;
+}
+
+blockquote {
+  margin: 20px 0 20px;
+  padding: 30px;
+}
+
+
+button:focus {
+  outline: none;
+}
+
+.form-control::-moz-placeholder {
+  color: #2a2a2a;
+  opacity: 1;
+}
+
+/*------------------------------------------------------------------
+    LOADER 
+-------------------------------------------------------------------*/
+
+#preloader {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #dd666c;
+  z-index: 11000;
+  position: fixed;
+  display: block;
+}
+
+.pulse {
+  height: 150px;
+  width: 200px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.pulse:after {
+  content: "";
+  display: block;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 200px 100px" enable-background="new 0 0 200px 100px" xml:space="preserve"><polyline fill="none" stroke-width="3px" stroke="white" points="2.4,58.7 70.8,58.7 76.1,46.2 81.1,58.7 89.9,58.7 93.8,66.5 102.8,22.7 110.6,78.7 115.3,58.7 126.4,58.7 134.4,54.7 142.4,58.7 197.8,58.7 "/></svg>')
+    0 0 no-repeat;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-animation: 2s pulse linear infinite;
+  animation: 2s pulse linear infinite;
+  clip: rect(0, 0, 100px, 0);
+}
+.pulse:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 2px;
+  right: 2px;
+  bottom: 0;
+  top: 16px;
+  margin: auto;
+  height: 3px;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    clip: rect(0, 0, 100px, 0);
+    opacity: 0.4;
+  }
+  4% {
+    clip: rect(0, 66.66667px, 100px, 0);
+    opacity: 0.6;
+  }
+  15% {
+    clip: rect(0, 133.33333px, 100px, 0);
+    opacity: 0.8;
+  }
+  20% {
+    clip: rect(0, 300px, 100px, 0);
+    opacity: 1;
+  }
+
+  80% {
+    clip: rect(0, 300px, 100px, 0);
+    opacity: 0;
+  }
+
+  90% {
+    clip: rect(0, 300px, 100px, 0);
+    opacity: 0;
+  }
+
+  100% {
+    clip: rect(0, 300px, 100px, 0);
+    opacity: 0;
+  }
+}
+@keyframes pulse {
+  0% {
+    clip: rect(0, 0, 100px, 0);
+  }
+  4% {
+    clip: rect(0, 66.66667px, 100px, 0);
+  }
+  15% {
+    clip: rect(0, 133.33333px, 100px, 0);
+  }
+  20% {
+    clip: rect(0, 300px, 100px, 0);
+    opacity: 1;
+  }
+
+  80% {
+    clip: rect(0, 300px, 100px, 0);
+    opacity: 0;
+  }
+
+  90% {
+    opacity: 0;
+  }
+
+  100% {
+    clip: rect(0, 300px, 100px, 0);
+    opacity: 0;
+  }
+}
+
+.pulse {
+  text-align: center;
+}
+.pulse i {
+  color: #ffffff;
+  font-size: 38px;
+}
+
+/*------------------------------------------------------------------
+    HEADER
+-------------------------------------------------------------------*/
+
+.top-header .navbar {
+  padding: 15px 0px;
+}
+
+.top-header .navbar .navbar-collapse ul li a {
+  padding: 19px 15px;
+  color: #f48a93;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+.top-header .navbar .navbar-collapse ul li a.active {
+  background: #dd666c;
+  color: #ffffff;
+}
+
+.top-header .navbar .navbar-collapse ul li a:hover {
+  background: #f48a93;
+  color: #ffffff;
+}
+
+.top-header.fixed-menu {
+  width: 100%;
+  position: fixed;
+  box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.06);
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  background: #fff;
+  z-index: 20;
+  top: -1px;  
+}
+
+.navbar-toggler {
+  border: 1px solid #dd666c;
+  border-radius: 0;
+  margin: 16px 15px;
+  padding: 10px 10px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.navbar-toggler span {
+  background: #dd666c;
+  display: block;
+  width: 25px;
+  height: 2px;
+  margin: 0 auto;
+  margin-top: 0px;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+.navbar-toggler span + span {
+  margin-top: 5px;
+}
+
+.navbar-toggler:hover {
+  border: 1px solid #dd666c;
+}
+
+.navbar-toggler:hover span {
+  background: #dd666c;
+}
+
+/*------------------------------------------------------------------
+    Banner
+-------------------------------------------------------------------*/
+
+.hero {
+  top: -10px;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("/images/hero.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.container-story {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.promo,
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.judul {
+  font-size: 3rem;
+}
+.title-box {
+  margin-top: 20px;
+}
+
+.wraper-semua {
+  box-sizing: border-box;
+  padding: 0 100px;
+}
+
+/*------------------------------------------------------------------
+    About
+-------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Zen+Loop:ital@0;1&display=swap");
+
+.about-box {
+  padding: 70px 0px;
+}
+
+.title-box {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.title-box h2 {
+  font-size: 60px;
+  font-family: "Marck Script", cursive;
+  color: #222222;
+}
+.title-box h2 span {
+  color: #dd666c;
+  text-decoration: underline;
+}
+.about-main-info h2 {
+  font-size: 40px;
+  font-family: "Marck Script", cursive;
+}
+.about-main-info h2 span {
+  color: #dd666c;
+  text-decoration: underline;
+}
+
+#about {
+  margin-top:20px;
+}
+.about{
+  font-size: 0.8rem;
+  padding: 0 5rem;
+  margin-bottom: 50px;
+}
+.team{
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+.team:hover{
+color : black;
+}
+
+/*------------------------------------------------------------------
+    Story
+-------------------------------------------------------------------*/
+
+
+/*------------------------------------------------------------------
+    Family
+-------------------------------------------------------------------*
+
+/*------------------------------------------------------------------
+    Gallery
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+    Events
+
+
+/*------------------------------------------------------------------
+    Contact
+-------------------------------------------------------------------*/
+
+.content {
+  padding: 7rem 0;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.form-control {
+  border: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 0;
+}
+.form-control:active,
+.form-control:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-color: #000;
+}
+
+.col-form-label {
+  color: #f48a93;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+label.error {
+  font-size: 12px;
+  color: red;
+}
+
+#message {
+  resize: vertical;
+}
+
+#form-message-warning,
+#form-message-success {
+  display: none;
+}
+
+#form-message-warning {
+  color: #b90b0b;
+}
+
+#form-message-success {
+  color: #55a44e;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.submitting {
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+  display: none;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.footer-box {
+  background: #292f35;
+  padding: 20px 0;
+}
+
+.footer-box .footer-company-name {
+  text-align: center;
+  margin: 0px;
+  color: #ffffff;
+}
+
+.footer-box .footer-company-name a {
+  color: #dd666c;
+}
+.footer-box .footer-company-name a:hover {
+  color: #63c7bd;
+}
+
+
+/* PRODUCT CARD */
+.card {
+  width: 250px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.card-img-top {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+span.text-muted {
+  font-size: 12px;
+}
+
+small.text-muted {
+  font-size: 8px;
+}
+
+h5.mb-0 {
+  font-size: 1rem;
+}
+
+small.ghj {
+  font-size: 9px;
+}
+
+.mid {
+  background: #ecedf1;
+}
+
+h6.ml-1 {
+  font-size: 13px;
+}
+
+small.key {
+  text-decoration: underline;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.btn-danger {
+  color: #ffcbd2;
+}
+
+.btn-danger:focus {
+  box-shadow: none;
+}
+
+small.justify-content-center {
+  font-size: 9px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.lis{
+  padding-left: 100px;
+  padding-right:100px;
+}
+
+@media screen and (max-width: 600px) {
+  .col-sm-4 {
+    margin-bottom: 50px;
+  }
+  
+  .detail{
+    height: 100vh;
+  }
+  .detail2{
+    height: 100vh;
+  }
+
+  .lis{
+    padding: 0;
+  }
+}
+
+
+@media screen and (min-width: 600px) {
+  .ok{
+    display: none;
+  }
+  .detail{
+    height: 100vh;
+  }
+
+  .detail2{
+    height: 0;
+  }
+}
+
+/* detail */
+
+
