@@ -1,17 +1,37 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
-const Contact = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
-  console.log(errors);
+const Result = ()=>{
+  return(
+    <p>
+      pesan terkirim
+    </p>
+  )
+}
 
+export default function Contact() {
+  const [result, showresult] = useState(false);
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm("gmail", "basic", e.target, "user_OYF1lYYjCHB8GGD1ziTPz")
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+    showresult(true);
+  };
 
   return (
     <>
-      <div className="container" style={{fontFamily:"Barlow "}}>
+      <div className="container" style={{ fontFamily: "Barlow " }}>
         <div className="row">
-          <div className="col-md-5 mr-auto" >
+          <div className="col-md-5 mr-auto">
             <p className="mb-5">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste
               quaerat autem corrupti asperiores accusantium et fuga! Facere
@@ -47,7 +67,7 @@ const Contact = () => {
               method="post"
               id="contactForm"
               name="contactForm"
-              onSubmit={handleSubmit(onSubmit)}
+              onSubmit={sendEmail}
             >
               <div className="row">
                 <div className="col-md-12 form-group">
@@ -58,9 +78,8 @@ const Contact = () => {
                     type="text"
                     className="form-control"
                     id="name"
-                    {...register("nama", { required: true })}
+                    name="nama"
                   />
-                  {errors.nama && <p>Masukan Nama.</p>}
                 </div>
               </div>
               <div className="row">
@@ -71,10 +90,22 @@ const Contact = () => {
                   <input
                     type="text"
                     className="form-control"
+                    name="email"
                     id="email"
-                    {...register("email", { required: true })}
                   />
-                  {errors.email && <p>Masukan Email Yang Valid.</p>}
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-12 form-group">
+                  <label htmlFor="Nomor Hp" className="col-form-label">
+                    Nomor Hp
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="nomor"
+                    id="nomor"
+                  />
                 </div>
               </div>
 
@@ -87,23 +118,25 @@ const Contact = () => {
                     className="form-control"
                     name="message"
                     id="message"
-                    cols="30"
-                    rows="7"
-                    {...register("pesan", { required: true })}
+                    cols="20"
+                    rows="5"
                   ></textarea>
-                  {errors.pesan && <p>Masukan Pesan.</p>}
                 </div>
               </div>
               <div className="row">
                 <div className="col-md-12">
-                <button
-                className="btn"
-                style={{ backgroundColor: "#f48a93", color: "white" }}
-              >
-                Kirim
-              </button>
+                  <button
+                    className="btn"
+                    style={{ backgroundColor: "#f48a93", color: "white" }}
+                    type="submit"
+                  >
+                    Kirim
+                  </button>
                 </div>
               </div>
+              <div className="row">
+                {result ? <Result/> : null}
+                </div>
             </form>
 
             <div id="form-message-warning mt-4"></div>
@@ -115,6 +148,4 @@ const Contact = () => {
       </div>
     </>
   );
-};
-
-export default Contact;
+}
