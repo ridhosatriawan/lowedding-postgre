@@ -1,6 +1,8 @@
 import Link from "next/link";
+import NumericLabel from "react-pretty-numbers";
 
 const Card = (props) => {
+
   return (
     <>
       <div className="card">
@@ -23,7 +25,9 @@ const Card = (props) => {
               <h5 className="mb-0 text-muted">Mulai Dari</h5>
             </div>
             <div className="d-flex flex-column">
-              <h5 className="mb-0">Rp. {props.price}</h5>
+              <h5 className="mb-0">
+                Rp.<NumericLabel>{props.price}</NumericLabel>
+              </h5>
             </div>
           </div>
           <div className="d-flex flex-row justify-content-between px-3 pt-3 mid">

@@ -84,7 +84,7 @@ const FormUbahProduct = (props) => {
         </div>
         <div className="form-group">
         <textarea
-            // style={{display:"none"}}
+            style={{display:"none"}}
             {...register("deskripsi")}
             className="form-control"
             id="deskripsi"

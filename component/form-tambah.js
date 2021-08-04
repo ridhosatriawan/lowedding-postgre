@@ -63,19 +63,19 @@ const FormTambahProduct = (props) => {
           />
         </div>
         <div className="form-group">
+          <label htmlFor="inputDeskripsi">Deskripsi Produk</label>
+            <QuillNoSSRWrapper value={deskripsi}  theme="snow" onChange={onEditorChange} placeholder="isikan deskripsi disini"/>
+        </div>
+        <div className="form-group">
         <textarea
             // style={{display:"none"}}
-            {...register("deskripsi")}
+            {...register("deskripsi", { required: true })}
             className="form-control"
             id="deskripsi"
             rows="3"
             value={deskripsi}
-            onChange={(Event) => setDeskripsi(Event.target.value)}
+            placeholder="jangan isi deskripsi di sini"
           ></textarea>
-        </div>
-        <div className="form-group">
-          <label htmlFor="inputDeskripsi">Deskripsi Produk</label>
-            <QuillNoSSRWrapper value={deskripsi}  theme="snow" onChange={onEditorChange} placeholder="kampret"/>
         </div>
         <div className="form-group">
           <label htmlFor="inputPromo">Promo</label>
