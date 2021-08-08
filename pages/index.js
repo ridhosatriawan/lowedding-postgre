@@ -9,7 +9,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React, { useState } from "react";
 
-
 // export async function getStaticProps(context){
 //     const Pernikahan = await prisma.product.findMany();
 //     return{
@@ -55,25 +54,25 @@ export default function Home(props) {
           slidesToShow: 2,
           slidesToScroll: 1,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   const [visible, setVisible] = useState(3);
@@ -87,12 +86,22 @@ export default function Home(props) {
           <link rel="icon" href="/favicon.ico" />
         </Head>
 
+        <div className="jumbotron-fluid">
+          <div className="fluid-container">
+            <img src="/images/hero.jpg" class="img-fluid" alt="hero" />
+          </div>
+        </div>
+        {/* <div className="banner">
         <div id="home" className="jumbotron hero"></div>
+        </div> */}
 
-        <div className="container-story">
-          <p className="display-4" style={{ color: "#f48a93" ,fontFamily:"Calibri"}}>
-            "Every love story is beautiful, but yours should be <br /> unique.
-            We build your dream around you."
+        <div className="container container-story">
+          <p
+            className="story text-center"
+            style={{ color: "#f48a93", fontFamily: "Calibri" }}
+          >
+            "Every love story is beautiful, but yours should be unique. We build
+            your dream around you."
           </p>
         </div>
 
@@ -122,7 +131,10 @@ export default function Home(props) {
           <div>
             <Slider {...settings}>
               {props.promo.map((pernikahan) => (
-                <div className="container-fluid d-flex justify-content-center" key={pernikahan.id}>
+                <div
+                  className="container-fluid d-flex justify-content-center"
+                  key={pernikahan.id}
+                >
                   <Card
                     title={pernikahan.nama}
                     image={pernikahan.gambar}
@@ -178,17 +190,10 @@ export default function Home(props) {
           <div className="row">
             <div className="col-lg-12">
               <div className="title-box">
-                <h2 style={{ fontFamily: "Caveat", color: "#f48a93" }}>
+                <h2 className="judul" style={{ fontFamily: "Caveat", color: "#f48a93" }}>
                   About Us
                 </h2>
-                <p
-                  className="about"
-                  style={{
-                    fontFamily: "Barlow",
-                    fontSize: 25 + "px",
-                    color: "#969da2",
-                  }}
-                >
+                <p className="about text-center">
                   We are a full-service wedding and event planning company
                   dedicated to once-in-a-lifetime celebrations. Let I Do… make
                   your vision a reality. Whether you’re planning an intimate
@@ -200,6 +205,7 @@ export default function Home(props) {
               </div>
             </div>
           </div>
+          
           <div className="row ">
             <Cardp
               link={"https://www.instagram.com/r.ozy.prkrs/"}
@@ -228,14 +234,14 @@ export default function Home(props) {
           </div>
         </div>
         <div className="row" id="contact">
-            <div className="col-lg-12">
-              <div className="title-box">
-                <h2 style={{ fontFamily: "Caveat", color: "#f48a93" }}>
-                  Contact Us
-                </h2>
-              </div>
+          <div className="col-lg-12">
+            <div className="title-box">
+              <h2 style={{ fontFamily: "Caveat", color: "#f48a93" }}>
+                Contact Us
+              </h2>
             </div>
           </div>
+        </div>
         <div className="container">
           <Contact></Contact>
         </div>

@@ -7,7 +7,7 @@ return (
 		<div className="container">
 			<Link href="/">
 			<a className="navbar-brand">
-                <img src="images/LOGO.png" alt="img" style={{maxWidth: 50 + "px"}} />
+                <img src="images/LOGO.png" className="img-fluid" alt="img" style={{maxWidth: 50 + "px"}} />
                 </a>
 			</Link>
 			<button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">

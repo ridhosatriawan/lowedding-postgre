@@ -4,31 +4,28 @@ import { Component } from "react";
 // import { CKEditor } from '@ckeditor/ckeditor5-react';
 // import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import dynamic from "next/dynamic";
-const QuillNoSSRWrapper = dynamic(import('react-quill'), {	
-	ssr: false,
-	loading: () => <p>Loading ...</p>,
-	})
+const QuillNoSSRWrapper = dynamic(import("react-quill"), {
+  ssr: false,
+  loading: () => <p>Loading ...</p>,
+});
 
 const FormTambahProduct = (props) => {
+  // const [editorState, setEditorState] = React.useState(
+  //     () => EditorState.createEmpty(),
+  //   );
 
-    // const [editorState, setEditorState] = React.useState(
-    //     () => EditorState.createEmpty(),
-    //   );
-
-    const [deskripsi, setDeskripsi] = useState("");
-    const onEditorChange = (value) => {
-        setDeskripsi(value)
-        console.log(deskripsi)
-    }
-
+  const [deskripsi, setDeskripsi] = useState("");
+  const onEditorChange = (value) => {
+    setDeskripsi(value);
+    console.log(deskripsi);
+  };
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-    
-  
+
   return (
     <div className="shadow mb-4 py-3 px-3">
       <form onSubmit={handleSubmit(props.onSubmit)}>
@@ -64,10 +61,15 @@ const FormTambahProduct = (props) => {
         </div>
         <div className="form-group">
           <label htmlFor="inputDeskripsi">Deskripsi Produk</label>
-            <QuillNoSSRWrapper value={deskripsi}  theme="snow" onChange={onEditorChange} placeholder="isikan deskripsi disini"/>
+          <QuillNoSSRWrapper
+            value={deskripsi}
+            theme="snow"
+            onChange={onEditorChange}
+            placeholder="isikan deskripsi disini"
+          />
         </div>
         <div className="form-group">
-        <textarea
+          <textarea
             // style={{display:"none"}}
             {...register("deskripsi", { required: true })}
             className="form-control"
@@ -88,7 +90,11 @@ const FormTambahProduct = (props) => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary" onClick={()=>console.log("coba")}>
+        <button
+          type="submit"
+          className="btn btn-primary"
+          onClick={() => console.log("coba")}
+        >
           Submit
         </button>
       </form>

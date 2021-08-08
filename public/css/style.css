@@ -133,7 +133,6 @@ blockquote {
   padding: 30px;
 }
 
-
 button:focus {
   outline: none;
 }
@@ -304,7 +303,7 @@ button:focus {
   animation-name: fadeInDown;
   background: #fff;
   z-index: 20;
-  top: -1px;  
+  top: -1px;
 }
 
 .navbar-toggler {
@@ -347,6 +346,9 @@ button:focus {
 /*------------------------------------------------------------------
     Banner
 -------------------------------------------------------------------*/
+.baner {
+  height: auto;
+}
 
 .hero {
   top: -10px;
@@ -358,13 +360,21 @@ button:focus {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
 }
+
 .container-story {
+  margin-top: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+
+.story {
+  font-size: 30px;
+}
+
 .promo,
 .title {
   display: flex;
@@ -416,28 +426,27 @@ button:focus {
 }
 
 #about {
-  margin-top:20px;
+  margin-top: 20px;
 }
-.about{
-  font-size: 0.8rem;
-  padding: 0 5rem;
-  margin-bottom: 50px;
+.about {
+  font-family: "Barlow";
+  font-size: 20px;
+  color: "#969da2";
 }
-.team{
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
+.team {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.team:hover{
-color : black;
+.team:hover {
+  color: black;
 }
 
 /*------------------------------------------------------------------
     Story
 -------------------------------------------------------------------*/
-
 
 /*------------------------------------------------------------------
     Family
@@ -539,7 +548,6 @@ label.error {
   color: #63c7bd;
 }
 
-
 /* PRODUCT CARD */
 .card {
   width: 250px;
@@ -597,42 +605,47 @@ small.justify-content-center {
   text-decoration: underline;
 }
 
-.lis{
+.lis {
   padding-left: 100px;
-  padding-right:100px;
+  padding-right: 100px;
 }
 
 @media screen and (max-width: 600px) {
   .col-sm-4 {
     margin-bottom: 50px;
   }
-  
-  .detail{
+
+  .detail {
     height: 100vh;
   }
-  .detail2{
+  .detail2 {
     height: 100vh;
   }
 
-  .lis{
+  .lis {
     padding: 0;
   }
+
+  .judul{
+    font-size: 25px;
+  }
 }
 
-
 @media screen and (min-width: 600px) {
-  .ok{
+  .ok {
     display: none;
   }
-  .detail{
+  .detail {
     height: 100vh;
   }
 
-  .detail2{
+  .detail2 {
     height: 0;
+  }
+  .story{
+    font-size: 40px;
   }
 }
 
+
 /* detail */
-
-

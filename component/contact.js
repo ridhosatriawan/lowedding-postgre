@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
-
-const Result = ()=>{
-  return(
-    <p>
-      pesan terkirim
-    </p>
-  )
-}
+import SweetAlert from "sweetalert-react";
+import 'sweetalert/dist/sweetalert.css';
+import { useForm } from "react-hook-form";
 
 export default function Contact() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   const [result, showresult] = useState(false);
+
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
@@ -79,6 +81,7 @@ export default function Contact() {
                     className="form-control"
                     id="name"
                     name="nama"
+                    {...register("nama", { required: true })}
                   />
                 </div>
               </div>
@@ -92,6 +95,7 @@ export default function Contact() {
                     className="form-control"
                     name="email"
                     id="email"
+                    {...register("nama", { required: true })}
                   />
                 </div>
               </div>
@@ -134,15 +138,13 @@ export default function Contact() {
                   </button>
                 </div>
               </div>
-              <div className="row">
-                {result ? <Result/> : null}
-                </div>
+              <SweetAlert
+                show={result}
+                title="terimakasih"
+                text="Pesan anda telah terikirim, kami akan menghubungi anda segera"
+                onConfirm={() => showresult(false)}
+              />
             </form>
-
-            <div id="form-message-warning mt-4"></div>
-            <div id="form-message-success">
-              Your message was sent, thank you!
-            </div>
           </div>
         </div>
       </div>
